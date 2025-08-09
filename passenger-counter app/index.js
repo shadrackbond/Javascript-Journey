@@ -18,7 +18,10 @@ function increment(){
     //console.log(count);
 
 }
-
+//create a function, save(), which logs out the count when its called
+function save(){
+    console.log(count);
+}
 
 
 
