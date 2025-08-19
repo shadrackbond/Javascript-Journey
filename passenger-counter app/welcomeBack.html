@@ -7,6 +7,20 @@
 </head>
 <body>
     <p id="welcome-el"></p>
-    <script src="index.js"></script>
+    <script>
+        // Grab the welcome-el paragraph and store it in a variable called welcomeEl
+        //Create tow variables(name and greeting) that contains your name
+        // and the greeting we want to render on the page
+        //Render the welcome page using welcomeEl.innerText
+
+        let welcomeEl = document.getElementById("welcome-el");
+
+        let name = "Shadrack Makau, ";
+        let greeting = "Hello !! Welcome to the first of its kind coding journey";
+
+        welcomeEl.innerText = name + greeting;
+
+        welcomeEl.innerText += " emoji";
+    </script>
 </body>
 </html>
