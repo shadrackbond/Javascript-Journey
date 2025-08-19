@@ -17,7 +17,5 @@ console.log(messageToUser);// the + sign concatenates the two messages together
 
 let name = "Shadrack Makau";
 let greeting = "Hi, my name is ";
-
 let myGreeting = greeting + name;
-
 console.log(myGreeting);
