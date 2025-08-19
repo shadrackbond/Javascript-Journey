@@ -13,14 +13,20 @@ console.log(countEl);
 let count = 0;
 
 function increment(){
-    count = count + 1;
+    count += 1;
     countEl.innerText = count;
     console.log(count);
 
 }
+//Grab the save-el paragraph and store it in a variable called saveEl
+let saveEl = document.getElementById("save-el");
 //create a function, save(), which logs out the count when its called
  function save(){
-     console.log(count);
+    //create a variable that contains both the count and the data separator, i.e. "12 -"
+    let variable = " " + count + " - ";
+    //Render the variable in the saveEl using innerText
+    saveEl.innerText += variable;
+    console.log(count);
 }
 
 
