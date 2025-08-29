@@ -5,6 +5,7 @@ body{
     text-align: center;
     font-size: 25px;
     font-weight: bold;
+    margin-bottom: 4px;
 }
 
 h1{
@@ -25,4 +26,5 @@ button{
     font-weight: bold;
     border: none;
     border-radius: 5px;
+    
 }
