@@ -1,11 +1,8 @@
-let firstCard = getRandomCard();
-let secondCard = getRandomCard();
+let cards = [];
+let sum = 0;
 let hasBlackJACK = false;
-let isAlive = true;
+let isAlive = false;
 let message = "";
-let cards = [firstCard,secondCard];
-let sum = firstCard + secondCard;
-
 let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
@@ -28,6 +25,11 @@ function getRandomCard(){
 }
 
 function startGame(){
+    isAlive = true;
+    let firstCard = getRandomCard();
+    let secondCard = getRandomCard();
+    cards =[firstCard,secondCard];
+    sum = firstCard + secondCard;
     renderGame();
 }
 
@@ -42,6 +44,7 @@ function renderGame(){
 
     if (sum <= 20) {
         message = "Do you want to draw a new card";
+        isAlive = true;
     }
     else if (sum === 21) {
         message = "You have a Blackjack";
@@ -55,9 +58,12 @@ function renderGame(){
 }
 
 function newCard(){
-    console.log("drawing out console from the deck");
-    let card = getRandomCard();
-    sum +=card;
-    cards.push(card);
-    renderGame();
+    // only allow the player to get a new card if isAlive and does not have blackjack
+    if(isAlive === true && hasBlackJACK === false){
+        let card = getRandomCard();
+        sum += card;
+        cards.push(card);
+        renderGame();
+    }
+    
 }
