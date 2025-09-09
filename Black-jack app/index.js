@@ -1,3 +1,7 @@
+let player = {
+    name: "Extreme1",
+    chips: 10000
+};
 let cards = [];
 let sum = 0;
 let hasBlackJACK = false;
@@ -10,6 +14,9 @@ let cardsEl = document.getElementById("cards-el");
 //css way of selecting id #
 //css way of selecting class .
 // Math.random() generates a random number between 0 and 1(not inclusive of 1)so basically 0.00.. -> 0.999...
+let playerEl = document.getElementById("player-el");
+playerEl.textContent = "Name: " + player.name + " , Amount balance: $" + player.chips;
+
 function getRandomCard(){
     let randomCard = Math.floor(Math.random() * 13) + 1;
     if(randomCard === 1){
