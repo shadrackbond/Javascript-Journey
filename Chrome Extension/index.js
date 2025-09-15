@@ -8,5 +8,7 @@ let inputEl = document.getElementById("input-el");
 let inputButton = document.getElementById("input-btn");
 
 inputButton.addEventListener("click", function(){
-    console.log("button clicked");
+    let x = document.getElementById("input-el").value;
+    myLeads.push(x)
+    console.log(myLeads);
 })
