@@ -3,9 +3,9 @@
 //     console.log("Button has been clicked");
 // }
 let myLeads = ["www.getelement.com", "www.areReady.com", "www.musicSoul.com"];
-let inputEl = document.getElementById("input-el");
-
-let inputButton = document.getElementById("input-btn");
+const inputEl = document.getElementById("input-el");
+const inputButton = document.getElementById("input-btn");
+const ulEl = document.getElementById("ul-el");
 
 inputButton.addEventListener("click", function(){
     myLeads.push(inputEl.value);
@@ -13,6 +13,5 @@ inputButton.addEventListener("click", function(){
 })
 
 for(let i =0; i< myLeads.length; i++){
-    console.log(myLeads[i]);
+    ulEl.textContent += myLeads[i] + " ";
 }
-//using for loop to log out leads
