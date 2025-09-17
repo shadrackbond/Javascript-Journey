@@ -15,4 +15,16 @@ inputButton.addEventListener("click", function(){
 for(let i =0; i< myLeads.length; i++){
     ulEl.innerHTML += "<li>" + myLeads[i] + "</li> ";
 }
-//rendering <li> elements with innerHTML
+//Use createElement() and append() instead of innerHTML
+//append means adding something to the end of a document
+// instead of innerHTML we could use createElement() this is how:
+
+// for (let i = 0; i < myLeads.length; i++) {
+//     //pseudo code is:
+//        //Create element
+//        //set text content
+//        //applent to ulEl
+//        const li =document.createElement("li");
+//        li.textContent = myLeads[i];
+//        ulEl.append(li)
+// }
