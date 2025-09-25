@@ -7,10 +7,20 @@ const inputEl = document.getElementById("input-el");
 const inputButton = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 
+//storing arrays in local storage
+
+leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
+console.log(leadsFromLocalStorage)
+
+
+
 inputButton.addEventListener("click", function(){
     myLeads.push(inputEl.value);
-    renderLeads();
     inputEl.value = "";
+    localStorage.setItem("myLeads", JSON.stringify(myLeads));
+    renderLeads();
+
+    console.log(localStorage.getItem("myLeads"));
 })
 
 function renderLeads(){
