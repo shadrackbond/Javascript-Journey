@@ -6,13 +6,21 @@ let myLeads = [];
 const inputEl = document.getElementById("input-el");
 const inputButton = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
-
+const deleteBtn = document.getElementById("delete-btn");
 //storing arrays in local storage
 
-leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
-console.log(leadsFromLocalStorage)
+const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 
+if(leadsFromLocalStorage){
+    myLeads = leadsFromLocalStorage;
+    renderLeads();
+}
 
+deleteBtn.addEventListener("dblclick", function(){
+    localStorage.clear();
+    myLeads = [];
+    ulEl.remove();
+})
 
 inputButton.addEventListener("click", function(){
     myLeads.push(inputEl.value);
