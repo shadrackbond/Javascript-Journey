@@ -7,13 +7,31 @@ const inputEl = document.getElementById("input-el");
 const inputButton = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 const deleteBtn = document.getElementById("delete-btn");
-//storing arrays in local storage
+//how function parameters can improve the code
 
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 
 if(leadsFromLocalStorage){
     myLeads = leadsFromLocalStorage;
-    renderLeads();
+    render(myLeads);// when this function is called with the myLeads data it will become the data leads
+}
+
+// has low degree of re-usability
+function render(leads) {
+    let listItems = "";
+    for (let i = 0; i < leads.length; i++) {
+        listItems += `
+            <li> 
+
+                <a href = ${leads[i]} target = "_blank"> 
+                    ${leads[i]} 
+                </a> 
+
+            </li> `;
+
+        console.log(listItems)
+    }
+    ulEl.innerHTML = listItems;
 }
 
 deleteBtn.addEventListener("dblclick", function(){
@@ -26,27 +44,11 @@ inputButton.addEventListener("click", function(){
     myLeads.push(inputEl.value);
     inputEl.value = "";
     localStorage.setItem("myLeads", JSON.stringify(myLeads));
-    renderLeads();
+    render(myLeads);
 
     console.log(localStorage.getItem("myLeads"));
 })
 
-function renderLeads(){
-    let listItems = "";
-    for (let i = 0; i < myLeads.length; i++) { 
-        listItems += `
-            <li> 
-
-                <a href = ${myLeads[i]} target = "_blank"> 
-                    ${myLeads[i]} 
-                </a> 
-
-            </li> `;
-
-        console.log(listItems)
-    }
-    ulEl.innerHTML = listItems;
-}
 
 //Use createElement() and append() instead of innerHTML
 //append means adding something to the end of a document
