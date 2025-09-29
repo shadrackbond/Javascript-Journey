@@ -7,7 +7,7 @@ const inputEl = document.getElementById("input-el");
 const inputButton = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 const deleteBtn = document.getElementById("delete-btn");
-//how function parameters can improve the code
+const tabBtn = document.getElementById("tab-btn");
 
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 
@@ -16,7 +16,19 @@ if(leadsFromLocalStorage){
     render(myLeads);// when this function is called with the myLeads data it will become the data leads
 }
 
-// has low degree of re-usability
+const tabs = [
+// ..key Value
+    { url: "www.linkedin.com/in/shadrack-makau-95a7072a1"}
+    //object
+]
+
+
+tabBtn.addEventListener("click" ,function(){
+    const output = tabs[0].url;
+    console.log(output)
+})
+
+
 function render(leads) {
     let listItems = "";
     for (let i = 0; i < leads.length; i++) {
