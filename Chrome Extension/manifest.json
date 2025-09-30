@@ -5,6 +5,10 @@
     "action" : {
         "default_popup": "index.html",
         "default_icon": "setting-wrench-black-icon.png"
-    }
+    },
+
+    "permissions":[
+        "tabs"
+    ]
 
 }

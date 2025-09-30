@@ -16,16 +16,13 @@ if(leadsFromLocalStorage){
     render(myLeads);// when this function is called with the myLeads data it will become the data leads
 }
 
-const tabs = [
-// ..key Value
-    { url: "www.linkedin.com/in/shadrack-makau-95a7072a1"}
-    //object
-]
-
-
 tabBtn.addEventListener("click" ,function(){
-    const output = tabs[0].url;
-    console.log(output)
+    chrome.tab.query({active: true, currentWindow: true}, function(tabs){
+        myLeads.push(tabs[0].url);
+        localStorage.setItem("myLeads", JSON.stringify(myLeads));
+        render(myLeads);
+    })
+    
 })
 
 
